@@ -7,8 +7,9 @@ Automatic age and gender classification in real-time, using Convolutional Neural
 * [About this App](#AboutApp)
 * [About the Model used](#AboutModel)
 * [App main features](#AppFeatures)
-* [Requirements](#Requirements)
+* [Requirements and Versions Used](#Requirements)
 * [Installation Process](#Installation)
+* [Running the app](#RunApp)
 * [License](#License)
 
 
@@ -23,7 +24,7 @@ Automatic age and gender classification in real-time, using Convolutional Neural
   <img src="Demos/ss3.jpg" width=250 height=400>
 </p>
 <p float="left">
-  <img src="Demos/ss4.jp"g width=250 height=400>
+  <img src="Demos/ss4.jpg" width=250 height=400>
   <img src="Demos/ss5.png" width=250 height=400>
   <img src="Demos/ss6.png" width=250 height=400>
 </p>
@@ -52,15 +53,15 @@ This was a small part of my final project to obtain my Bachelor's Degree at Facu
 
 ## <a name="AboutModel"></a>About the Model used
 Classes used:
-- 04 - 06 years old
-- 07 - 08 years old
-- 09 - 11 years old
-- 12 - 19 years old
-- 20 - 27 years old
-- 28 - 35 years old
-- 36 - 45 years old
-- 46 - 60 years old
-- 61 - 75 years old
+- 04 - 06 years old - _early childhood_
+- 07 - 08 years old - _middle childhood_
+- 09 - 11 years old - _late childhood_
+- 12 - 19 years old - _adolescence_
+- 20 - 27 years old - _early adulthood_
+- 28 - 35 years old - _middle adulthood_
+- 36 - 45 years old - _midlife_
+- 46 - 60 years old - _mature adulthood_
+- 61 - 75 years old - _late adulthood_
 - female gender
 - male gender
 
@@ -83,16 +84,26 @@ The model was trained using MobileNet v1 network using 10k images from UTKFace a
 ## <a name="AppFeatures"></a>App main features
 <img src="Demos/ss-app.jpg" width=700>
 The interface is simple to use, containing only three buttons on the main menu, namely:
-• for opening the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
-• for opening a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
-• to select a local directory that contains only images, following that the user can view in cascade the classified images
+- for opening the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
+- for opening a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
+- to select a local directory that contains only images, following that the user can view in cascade the classified images
 
 
-## <a name="Requirements"></a>Requirements
+## <a name="Requirements"></a>Requirements and Versions Used
 * Raspberry Pi 3 or 4 or Any Linux System based on ARM chip with at least 512MB RAM.
-* Python version 3.6 or higher
-* PyQt5 version ?? or higher
-* TensorFlow version ?? and OpenCV version ?? (see [Installation Process](#Installation) below)
+* Python version 3.7 or higher
+* PyQt5 version 5.11.3 or higher (usually pre-installed with Python)
+* NumPy version 1.16.2 or higher
+* TensorFlow version 1.15.0 and OpenCV version 3.4.3 (see [Installation Process](#Installation) below)
+
+Notes for me (to find out these versions):
+```bash
+python3 --version
+pip3 freeze # for numpy, tensorflow
+
+python3 -c "import cv2; print(cv2.__version__)"
+python3 -c "from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)"
+```
 
 
 ## <a name="Installation"></a>Installation Process
@@ -108,6 +119,17 @@ pip3 install tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl
 python3 -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
 ```
 You can also refer to [TensorFlow Lite official guide](https://www.tensorflow.org/lite/guide/python).
+
+
+## <a name="RunApp"></a>Running the app
+Simply clone this repository then run using python3:
+```bash
+git clone https://github.com/radualexandrub/Age-Gender-Classification-on-RaspberryPi4-with-TFLite-PyQt5.git RaduApp
+cd RaduApp
+python3 AgeClass_MainApp.py
+```
+If git is not installed, run `sudo apt install git`.
+
 
 ## <a name="License"></a>LICENSE
 Copyright © 2020, [Radu-Alexandru B.](https://github.com/radualexandrub). Released under the [MIT license](LICENSE).
