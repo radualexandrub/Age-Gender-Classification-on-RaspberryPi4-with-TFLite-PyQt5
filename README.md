@@ -83,10 +83,11 @@ The model was trained using MobileNet v1 network using 10k images from UTKFace a
 
 ## <a name="AppFeatures"></a>App main features
 <img src="Demos/ss-app.jpg" width=700>
+
 The interface is simple to use, containing only three buttons on the main menu, namely:
-- for opening the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
-- for opening a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
-- to select a local directory that contains only images, following that the user can view in cascade the classified images
+* for opening the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
+* for opening a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
+* to select a local directory that contains only images, following that the user can view in cascade the classified images
 
 
 ## <a name="Requirements"></a>Requirements and Versions Used
@@ -100,7 +101,6 @@ Notes for me (to find out these versions):
 ```bash
 python3 --version
 pip3 freeze # for numpy, tensorflow
-
 python3 -c "import cv2; print(cv2.__version__)"
 python3 -c "from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)"
 ```
@@ -109,7 +109,7 @@ python3 -c "from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)"
 ## <a name="Installation"></a>Installation Process
 - Install **NumPy**: `pip3 install numpy`.
 - Install **Pillow** `pip3 install Pillow`.
-- Install **OpenCV for Raspberry Pi** from [this tutorial](https://pysource.com/2018/10/31/raspberry-pi-3-and-opencv-3-installation-tutorial/). If error `undefined symbol __atomic_fetch_add_8 ` is encountered, try running `pip install opencv-contrib-python==4.1.0.25`.
+- Install **OpenCV for Raspberry Pi** from [this tutorial](https://pysource.com/2018/10/31/raspberry-pi-3-and-opencv-3-installation-tutorial/). If error `undefined symbol __atomic_fetch_add_8 ` is encountered, try running `pip install opencv-contrib-python==3.4.3.18` or `pip install opencv-contrib-python==4.1.0.25`.
 - Install **TensorFlow library** from [this tutorial](https://www.hackster.io/news/benchmarking-tensorflow-and-tensorflow-lite-on-the-raspberry-pi-43f51b796796).
 ```bash
 git clone https://github.com/PINTO0309/Tensorflow-bin.git
