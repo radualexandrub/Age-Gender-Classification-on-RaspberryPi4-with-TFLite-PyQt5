@@ -84,10 +84,10 @@ The model was trained using MobileNet v1 network using 10k images from UTKFace a
 ## <a name="AppFeatures"></a>App main features
 <img src="Demos/ss-app.jpg" width=700>
 
-The interface is simple to use, containing only three buttons on the main menu, namely:
-* for opening the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
-* for opening a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
-* to select a local directory that contains only images, following that the user can view in cascade the classified images
+The interface is simple to use, with only three buttons on the main menu:
+* open the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
+* open a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
+* select a local directory that contains only images, following that the user can view in cascade the classified images
 
 
 ## <a name="Requirements"></a>Requirements and Versions Used
@@ -103,6 +103,7 @@ python3 --version
 pip3 freeze # for numpy, tensorflow
 python3 -c "import cv2; print(cv2.__version__)"
 python3 -c "from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)"
+python3 -c "import tensorflow as tf; print(tf.version.VERSION)"
 ```
 
 
