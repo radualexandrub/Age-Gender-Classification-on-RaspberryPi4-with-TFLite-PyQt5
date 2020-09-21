@@ -1,5 +1,8 @@
 # Real-Time Age and Gender Classification on RaspberryPi4 using TFLite and PyQt5 Interface
 Automatic age and gender classification in real-time, using Convolutional Neural Networks (based on MobileNet v1 network), fitted on Raspberry Pi 4 model using a converted .tflite model. The application is wrapped in a simple and modern UI using PyQt5.
+<p align="center">
+  <img src="Demos/raspberry-social-git-link.png" width=600>
+</p>
 
 ## Contents:
 * [Demo](#Demo)
