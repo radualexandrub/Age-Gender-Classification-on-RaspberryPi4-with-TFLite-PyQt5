@@ -1,5 +1,12 @@
 # Real-Time Age and Gender Classification on RaspberryPi4 using TFLite and PyQt5 Interface
 Automatic age and gender classification in real-time, using Convolutional Neural Networks (based on MobileNet v1 network), fitted on Raspberry Pi 4 model using a converted .tflite model. The application is wrapped in a simple and modern UI using PyQt5.
+
+<!--- See https://shields.io for customizable shields --->
+![GitHub repo size](https://img.shields.io/github/repo-size/radualexandrub/Age-Gender-Classification-on-RaspberryPi4-with-TFLite-PyQt5)
+![GitHub stars](https://img.shields.io/github/stars/radualexandrub/Age-Gender-Classification-on-RaspberryPi4-with-TFLite-PyQt5)
+![GitHub forks](https://img.shields.io/github/forks/radualexandrub/Age-Gender-Classification-on-RaspberryPi4-with-TFLite-PyQt5)
+![GitHub license](https://img.shields.io/github/license/radualexandrub/Age-Gender-Classification-on-RaspberryPi4-with-TFLite-PyQt5)
+
 <p align="center">
   <img src="Demos/raspberry-social-git-link.png" width=600>
 </p>
@@ -93,7 +100,7 @@ The interface is simple to use, with only three buttons on the main menu:
 * select a local directory that contains only images, following that the user can view in cascade the classified images
 
 
-## <a name="Requirements"></a>Requirements and Versions Used
+## <a name="Requirements"></a>Prerequisites and Versions Used
 * Raspberry Pi 3 or 4 or Any Linux System based on ARM chip with at least 512MB RAM.
 * Python version 3.7 or higher
 * PyQt5 version 5.11.3 or higher (usually pre-installed with Python)
