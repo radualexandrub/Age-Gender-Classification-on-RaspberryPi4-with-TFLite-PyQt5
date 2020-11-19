@@ -75,6 +75,7 @@ Classes used:
 - female gender
 - male gender
 
+Face datasets used: [UTKFace](https://susanqq.github.io/UTKFace/) combined with [Appa-Real](http://chalearnlap.cvc.uab.es/dataset/26/description/).
 
 The model was trained using MobileNet v1 network using 10k images from UTKFace and Appa-Real databases, along with the following parameters:
 - Optimizer: Stochastic Gradient Descent (SGD)
