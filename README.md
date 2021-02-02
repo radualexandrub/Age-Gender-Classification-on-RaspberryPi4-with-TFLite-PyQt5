@@ -97,7 +97,7 @@ The model was trained using MobileNet v1 network using 10k images from UTKFace a
 
 The interface is simple to use, with only three buttons on the main menu:
 * open the attached camera on the Raspberry Pi, which captures the frames in real-time and at the same time locates the human faces by drawing a square around them, classifying the person according to age and gender
-* open a single picture in a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
+* open a single picture from a local directory, for which the age and gender classification will be made automatically if there is a person in the picture
 * select a local directory that contains only images, following that the user can view in cascade the classified images
 
 
@@ -108,7 +108,7 @@ The interface is simple to use, with only three buttons on the main menu:
 * NumPy version 1.16.2 or higher
 * TensorFlow version 1.15.0 and OpenCV version 3.4.3 (see [Installation Process](#Installation) below)
 
-Notes for me (to find out these versions):
+Notes for me to find out these versions:
 ```bash
 python3 --version
 pip3 freeze # for numpy, tensorflow
@@ -121,15 +121,41 @@ python3 -c "import tensorflow as tf; print(tf.version.VERSION)"
 ## <a name="Installation"></a>Installation Process
 - Install **NumPy**: `pip3 install numpy`.
 - Install **Pillow** `pip3 install Pillow`.
-- Install **OpenCV for Raspberry Pi** from [this tutorial](https://pysource.com/2018/10/31/raspberry-pi-3-and-opencv-3-installation-tutorial/). If error `undefined symbol __atomic_fetch_add_8 ` is encountered, try running `pip install opencv-contrib-python==3.4.3.18` or `pip install opencv-contrib-python==4.1.0.25`.
-- Install **TensorFlow library** from [this tutorial](https://www.hackster.io/news/benchmarking-tensorflow-and-tensorflow-lite-on-the-raspberry-pi-43f51b796796).
+- Install **OpenCV for Raspberry Pi** from [this tutorial](https://pysource.com/2018/10/31/raspberry-pi-3-and-opencv-3-installation-tutorial/) (or run the commands bellow). If error `undefined symbol __atomic_fetch_add_8 ` is encountered, try running `pip install opencv-contrib-python==3.4.3.18` or `pip install opencv-contrib-python==4.1.0.25`.
+
+```bash
+# (optional) Update OS system:
+sudo apt update
+sudo apt upgrade
+
+# Install dependencies
+sudo apt install build-essential cmake pkg-config
+sudo apt install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt install libxvidcore-dev libx264-dev
+sudo apt install libgtk2.0-dev libgtk-3-dev
+sudo apt install libatlas-base-dev gfortran
+
+# Install OpenCV and extra dependencies for OpenCV and Camera
+pip3 install opencv-python
+sudo apt install libqtgui4
+sudo modprobe bcm2835-v4l2
+sudo apt install libqt4-test
+```
+
+- Install **TensorFlow library** from [this tutorial](https://www.hackster.io/news/benchmarking-tensorflow-and-tensorflow-lite-on-the-raspberry-pi-43f51b796796) (or run the commands bellow).
+
 ```bash
 git clone https://github.com/PINTO0309/Tensorflow-bin.git
 cd Tensorflow-bin
 pip3 install tensorflow-1.13.1-cp35-cp35m-linux_armv7l.whl
+
 # test
 python3 -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
 ```
+
+If git is not installed, run `sudo apt install git`.
+
 You can also refer to [TensorFlow Lite official guide](https://www.tensorflow.org/lite/guide/python).
 
 
@@ -140,7 +166,6 @@ git clone https://github.com/radualexandrub/Age-Gender-Classification-on-Raspber
 cd RaduApp
 python3 AgeClass_MainApp.py
 ```
-If git is not installed, run `sudo apt install git`.
 
 ## Find me on my Social's
 ***My portfolio:*** [radubulai.com](https://radualexandrub.github.io/)<br>
